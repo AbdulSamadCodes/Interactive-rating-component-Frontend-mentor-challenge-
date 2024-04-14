@@ -1,0 +1,189 @@
+/*=======Google font link=======*/
+
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Alata&family=Arvo:wght@700&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Commissioner:wght@100..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Epilogue:ital,wght@0,100..900;1,100..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=League+Spartan:wght@100..900&family=Lora&family=Manrope:wght@200..800&family=Merriweather:wght@300&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@400;800&family=Overpass:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:wght@500;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Preahvihear&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital@0;1&family=Red+Hat+Text:ital,wght@0,400;0,600;0,700;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Grotesk&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+/*=========================Custom Properties========================*/
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(216, 12%, 54%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+  --orange: hsl(25, 97%, 53%);
+  /*========Typography=========*/
+
+  --font-family-overpass: "Overpass", sans-serif;
+}
+
+/*=========================Reset===========================*/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button,
+a,
+input {
+  display: block;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+button,
+input {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 30px;
+  scrollbar-width: thin;
+}
+
+body {
+  font-family: var(--font-family-overpass);
+  background-color: #000;
+  height: 100vh;
+}
+
+/*=========================Main styles===========================*/
+
+.container {
+  min-height: 100%;
+  padding-inline: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.rating-card,
+.thank-you-card {
+  display: grid;
+  padding: 30px 20px;
+  border-radius: 15px;
+  gap: 20px;
+  margin-inline: auto;
+  background-color: var(--dark-blue);
+}
+
+.rating-card {
+  max-width: 420px;
+}
+
+.thank-you-card {
+  max-width: 370px;
+  display: none;
+}
+
+.star-icon {
+  padding: 16px 15px;
+  border-radius: 50%;
+  background-color: var(--very-dark-blue);
+  max-width: max-content;
+}
+
+.card-title {
+  color: var(--white);
+  font-size: 30px;
+}
+
+.card-text {
+  color: var(--light-grey);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.rating-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+input[type="radio"] {
+  visibility: hidden;
+}
+
+label {
+  display: grid;
+  place-content: center;
+  background-color: var(--very-dark-blue);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: var(--medium-grey);
+  transition: background-color 300ms linear;
+}
+
+label:is(:hover, :focus) {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.rating-options > div:has(input[type="radio"]:checked) label {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.submit-btn {
+  width: 100%;
+  display: grid;
+  place-content: center;
+  border-radius: 30px;
+  color: var(--white);
+  letter-spacing: 3px;
+  background-color: var(--orange);
+  padding: 14px;
+  font-weight: 700;
+  font-family: var(--font-family-overpass);
+  font-size: 16px;
+  transition: background-color 300ms linear;
+  margin-block-start: 20px;
+}
+
+.submit-btn:is(:hover, :focus) {
+  background-color: var(--white);
+  color: var(--orange);
+}
+
+.thank-you-illustration {
+  max-width: max-content;
+  margin-inline: auto;
+}
+
+.thank-you-card > * {
+  text-align: center;
+}
+
+.rating-show {
+  padding: 7px 15px;
+  background-color: hsla(216, 12%, 8%, 0.4);
+  color: var(--orange);
+  border-radius: 15px;
+  font-weight: 500;
+  width: max-content;
+  margin-inline: auto;
+}
